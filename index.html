@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style>
+
+        /*
+        wszystko z tego tutka
+        https://www.youtube.com/watch?v=fA1NW-T1QXc
+        */
+
+        body {
+            background: #ccc;
+        }
+
+        #container {
+            width: 960px;
+            margin: 0 auto;
+
+            background-color: #aaa;
+        }
+
+        #left-column {
+            width: 700px;
+            float: left;
+            background: blue;
+        }
+
+        #right-column {
+            width: 260px;
+            float: left;
+            background: orange;
+        }
+
+        @media screen and (max-width: 959px) { /* at 959px scroll bar would appear */
+            #container {
+                width: 100%;
+            }
+            #left-column {
+                width: 70%;
+            }
+            #right-column {
+                width: 30%;
+            }
+        }
+
+        @media screen and (max-width: 640px) { /* phones */
+            #left-column {
+                width: 100%;
+            }
+            #right-column {
+                width: 100%;
+            }
+        }
+
+        @media screen and (max-width: 320px) { /* 320px - old iPhone 3 */
+            #container {
+                width: 320px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+    <div id="container">
+        <p>Szerokosc >= 960 - layout staly</p>
+        <section id="left-column">
+            <p>960 >= Szerokosc >= 640 (tablety) layout plynny, procentowy</p>
+        </section>
+
+        <aside id="right-column">
+            <p>640 >= Szerokosc >= 320</p>
+            <p>kazdy element pod kolejnym</p>
+            <p>Szerokosc <= 320</p>
+            <p>Powracamy do stalej szerokosci, by nie skalowac w nieskonczonosc</p>
+        </aside>
+    </div>
+</body>
+
+</html>
